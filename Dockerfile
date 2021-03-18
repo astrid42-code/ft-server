@@ -2,7 +2,7 @@ FROM debian:buster
 
 MAINTAINER Astrid Gaultier <asgaulti@student.42.fr>
 
-//(pour install / dl nginx et autres options ; apt-get est un outil pour installer /desinstaller des paquets provenant d'un dépot apt
+//(pour install / dl nginx et autres options ; apt-get pour installer /desinstaller des paquets provenant d'un dépot apt
 RUN apt-get update // met le cache à jour (update auto des paquets)
 RUN apt-get upgrade -y
 RUN apt-get install -y wget //dl et installe le paquet (wget pour dl les fichiers) // pk -y?
