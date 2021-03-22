@@ -12,24 +12,34 @@ server {
 
 	server_name pingu;
 
-// création certificats de sécurité 
+/**
+ création certificats de sécurité
+ */
 
-	ssl_certificate /etc/nginx/ssl/pingu.pem; ou /root/asgaulti/pingu.pem;
-	ssl_certificate_key /etc/nginx/ssl/pingu.key; ou /root/asgaulti/pingu.key;
-// pour la 2eme proposition il faudrait avoir installé nginx avant dans un autre fichier? ou le run dans le dockerfile?
+	ssl_certificate /etc/nginx/ssl/pingu.pem;
+	ssl_certificate_key /etc/nginx/ssl/pingu.key;
 
-	root /var/www/pingu;   // racine du site
+/**
+pour la 2eme proposition il faudrait avoir installé nginx avant dans un autre fichier? ou le run dans le dockerfile?
+*/
+	root /var/www/pingu;
 
-//liste des index
+/**
+liste des index
+*/
 	index index.html index.htm index.nginx-debian.html index.php;
 
-// création uri
+/**
+création uri
+*/
 	location / {
-		autoindex on; // facultatif : quel est le plus de faire un autoindex?
+		autoindex on;
 		try_files $uri $ uri/ = 404;
 	}
 
-// création du fastCGI
+/**
+création du fastCGI
+*/
 
 	location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
