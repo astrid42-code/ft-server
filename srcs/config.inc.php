@@ -6,13 +6,13 @@
  * All directives are explained in documentation in the doc/ folder
  * or at <https://docs.phpmyadmin.net/>.
 
-declare(strict_types=1);
+ * declare(strict_types=1);
 
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
 
-$cfg['blowfish_secret'] = 'aR74hxF9';
+$cfg['blowfish_secret'] = 'pingu1234567890abcdefghijklmnopq';
 
 /**
  * Servers configuration

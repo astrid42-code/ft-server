@@ -1,6 +1,6 @@
 FROM debian:buster
 
-MAINTAINER Astrid Gaultier <asgaulti@student.42.fr>
+# Astrid Gaultier <asgaulti@student.42.fr>
 
 # met le cache à jour (update auto des paquets)
 RUN apt-get update
@@ -15,9 +15,9 @@ RUN apt-get -y install mariadb-server
 RUN apt-get -y install php-mysql
 
 
-COPY ./srcs/init_docker.sh ./
-COPY ./srcs/config.inc.php ./
-COPY ./srcs/nginx_config ./
-COPY ./srcs/config-wp.php
+#COPY ./srcs/init_docker.sh ./
+#COPY ./srcs/config.inc.php ./
+#COPY ./srcs/nginx-config ./
+#COPY ./srcs/config-wp.php ./
 
-CMD bash init_docker.sh
+#CMD bash init_docker.sh
