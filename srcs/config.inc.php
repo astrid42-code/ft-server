@@ -1,7 +1,6 @@
-/**config phpmyadmin */
-
 <?php
- 
+
+/**config phpmyadmin */
 /**config mdp (pour l'https?) */
 
 $cfg['blowfish_secret'] = 'aR74hxF9';
