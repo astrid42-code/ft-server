@@ -1,3 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
+#    Updated: 2021/03/25 17:19:00 by asgaulti@st      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
 FROM debian:buster
 
 # Astrid Gaultier <asgaulti@student.42.fr>
@@ -23,7 +36,7 @@ RUN apt-get -y install php-mysql
 
 
 COPY ./srcs/init_docker.sh ./
-COPY ./srcs/config.inc.php ./
+COPY ./srcs/config.phpmyadmin.php ./
 COPY ./srcs/nginx-config ./
 COPY ./srcs/config-wp.php ./
 COPY ./srcs/start.sh ./
@@ -37,4 +50,6 @@ EXPOSE 80 443
 
 ENV autoindex on
 CMD bash
-# CMD bash init_docker.sh
+
+# CMD sudo docker build .
+# CMD sudo docker run -it --rm -p 80:80 -p 443:443 + nom de l'image
