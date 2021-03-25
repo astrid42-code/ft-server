@@ -5,3 +5,13 @@
 service php7.3-fpm start
 service nginx start
 service mysql start
+
+#pour maintenir le container une fois lance
+
+while true;
+        do sleep 10000;
+done
+
+# ou
+# tail -f fichier de logs nginx
+# nginx -g 'daemon off'
