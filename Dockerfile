@@ -15,9 +15,10 @@ RUN apt-get -y install mariadb-server
 RUN apt-get -y install php-mysql
 
 
-#COPY ./srcs/init_docker.sh ./
-#COPY ./srcs/config.inc.php ./
-#COPY ./srcs/nginx-config ./
-#COPY ./srcs/config-wp.php ./
+COPY ./srcs/init_docker.sh ./
+COPY ./srcs/config.inc.php ./
+COPY ./srcs/nginx-config ./
+COPY ./srcs/config-wp.php ./
 
-#CMD bash init_docker.sh
+ENV autoindex on
+CMD bash init_docker.sh
