@@ -1,8 +1,8 @@
 server {
 	listen 80;
 	listen [::]:80;
-	server_name pingu;
-	return 301 https://$server_name$request_uri;
+	server_name localhost;
+	return 301 https://$localhost$request_uri;
 }
 
 server {
@@ -10,14 +10,14 @@ server {
 	listen 443 ssl ;
 	listen [::]:443 ssl ;
 
-	server_name pingu;
+	server_name localhost;
 
 # création certificats de sécurité
 
-	ssl_certificate /etc/nginx/ssl/pingu.pem;
-	ssl_certificate_key /etc/nginx/ssl/pingu.key;
+	ssl_certificate /etc/nginx/ssl/localhost.pem;
+	ssl_certificate_key /etc/nginx/ssl/localhost.key;
 
-	root /var/www/pingu;
+	root /var/www/localhost;
 
 # liste des index
 

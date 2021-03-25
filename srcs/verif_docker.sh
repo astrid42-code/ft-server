@@ -1,4 +1,4 @@
-# script pour init docker pour les mac 42 (check si docker instlle correctement) dqns le goinfre pour ne pas fulfill ma session
+# script pour init docker pour les mac 42 (check si docker installe correctement) dans le goinfre pour ne pas fulfill ma session
 
 # https://github.com/alexandregv/42toolbox
 
