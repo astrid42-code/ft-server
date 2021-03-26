@@ -52,9 +52,9 @@ rm -rf ~/Library/Containers/com.docker.{docker,helper} ~/.docker &>/dev/null ;:
 mkdir -p "$docker_destination"/{com.docker.{docker,helper},.docker}
 
 # Make symlinks
-# ln -sf "$docker_destination"/com.docker.docker ~/Library/Containers/com.docker.docker
-# ln -sf "$docker_destination"/com.docker.helper ~/Library/Containers/com.docker.helper
-# ln -sf "$docker_destination"/.docker ~/.docker
+ln -sf "$docker_destination"/com.docker.docker ~/Library/Containers/com.docker.docker
+ln -sf "$docker_destination"/com.docker.helper ~/Library/Containers/com.docker.helper
+ln -sf "$docker_destination"/.docker ~/.docker
 
 # Start Docker for Mac
 open -g -a Docker
