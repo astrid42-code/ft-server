@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Dockerfile                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
+#    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
-#    Updated: 2021/03/27 15:02:59 by asgaulti         ###   ########.fr        #
+#    Updated: 2021/03/27 16:54:56 by asgaulti@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ COPY ./srcs/init_docker.sh ./
 COPY ./srcs/config.phpmyadmin.php ./
 COPY ./srcs/config-nginx ./
 COPY ./srcs/config-wp.php ./
-COPY ./srcs/start.sh ./
 COPY ./srcs/config.sh ./
 
 #installation wp tar xf : extraire une archive avec un fichier donne
@@ -46,7 +45,9 @@ COPY ./srcs/config.sh ./
 
 EXPOSE 80 443
 
-ENV autoindex on
+ENV AUTOINDEX on
+
+RUN sh ./config.sh
 CMD bash
 
 # CMD sudo docker build .
