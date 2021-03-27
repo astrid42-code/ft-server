@@ -3,17 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Dockerfile                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
+#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
-#    Updated: 2021/03/26 09:39:34 by asgaulti@st      ###   ########.fr        #
+#    Updated: 2021/03/27 15:02:59 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 FROM debian:buster
-
-# Astrid Gaultier <asgaulti@student.42.fr>
 
 # met le cache à jour (update auto des paquets)
 RUN apt-get update
@@ -54,3 +51,7 @@ CMD bash
 
 # CMD sudo docker build .
 # CMD sudo docker run -it --rm -p 80:80 -p 443:443 + nom de l'image
+# CMD service nginx stop si deja en train de tourner
+# CMD docker system prune pour supprimer ressources en suspens de docker
+# -a pour containers arretes et images non utilisees
+# sh start.sh
