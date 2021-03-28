@@ -6,7 +6,7 @@
 #    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
-#    Updated: 2021/03/27 16:54:56 by asgaulti@st      ###   ########.fr        #
+#    Updated: 2021/03/28 17:17:58 by asgaulti@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ RUN apt-get -y install mariadb-server
 #installation php-mysql (realiser des applis php avec une base de donnees mysql)
 RUN apt-get -y install php-mysql
 
+RUN apt-get install vim -y
 
 COPY ./srcs/init_docker.sh ./
 COPY ./srcs/config.phpmyadmin.php ./
@@ -50,7 +51,7 @@ ENV AUTOINDEX on
 RUN sh ./config.sh
 CMD bash
 
-# CMD sudo docker build .
+# CMD sudo docker build -t (nom image) .
 # CMD sudo docker run -it --rm -p 80:80 -p 443:443 + nom de l'image
 # CMD service nginx stop si deja en train de tourner
 # CMD docker system prune pour supprimer ressources en suspens de docker
