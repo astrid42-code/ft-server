@@ -6,7 +6,7 @@
 #    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
-#    Updated: 2021/03/28 17:17:58 by asgaulti@st      ###   ########.fr        #
+#    Updated: 2021/03/31 17:48:56 by asgaulti@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ COPY ./srcs/config.phpmyadmin.php ./
 COPY ./srcs/config-nginx ./
 COPY ./srcs/config-wp.php ./
 COPY ./srcs/config.sh ./
+COPY ./srcs/auto_index.sh ./
+COPY ./srcs/auto_index_off.conf ./
 
 #installation wp tar xf : extraire une archive avec un fichier donne
 #retirer le fichier .tar.gz apres install
@@ -50,6 +52,8 @@ ENV AUTOINDEX on
 
 RUN sh ./config.sh
 CMD bash
+
+# RTFM
 
 # CMD sudo docker build -t (nom image) .
 # CMD sudo docker run -it --rm -p 80:80 -p 443:443 + nom de l'image
