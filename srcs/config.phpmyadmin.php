@@ -24,7 +24,7 @@
  * cookie. Needs to be 32 chars long.
  */
 
-$cfg['blowfish_secret'] = 'pingu1234567890abcdefghijklmnopq';
+$cfg['blowfish_secret'] = '';
 
 /**
  * Servers configuration

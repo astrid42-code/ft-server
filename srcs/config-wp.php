@@ -37,10 +37,10 @@
 define( 'DB_NAME', 'wordpress' );
 
 /** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', 'wordpress_Pingu' );
+define( 'DB_USER', 'root' );
 
 /** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', 'cx5F93wY' );
+define( 'DB_PASSWORD', '' );
 
 /** Adresse de l’hébergement MySQL. */
 define( 'DB_HOST', 'localhost' );
@@ -65,14 +65,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'nt7Y963UrUpW' );
-define( 'SECURE_AUTH_KEY',  '4d78iwNGDqN8' );
-define( 'LOGGED_IN_KEY',    'X3Xp293cLLcs' );
-define( 'NONCE_KEY',        '9mve4V7CR6yK' );
-define( 'AUTH_SALT',        'rDp78EEedF33' );
-define( 'SECURE_AUTH_SALT', 'e24R8f4hVTvT' );
-define( 'LOGGED_IN_SALT',   'wa5mVGC2D48d' );
-define( 'NONCE_SALT',       'Ny33X9ySrr9K' );
+define( 'AUTH_KEY',         '' );
+define( 'SECURE_AUTH_KEY',  '' );
+define( 'LOGGED_IN_KEY',    '' );
+define( 'NONCE_KEY',        '' );
+define( 'AUTH_SALT',        '' );
+define( 'SECURE_AUTH_SALT', '' );
+define( 'LOGGED_IN_SALT',   '' );
+define( 'NONCE_SALT',       '' );
 
 /**#@-*/
 

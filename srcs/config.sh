@@ -13,15 +13,13 @@
 
 #pour maintenir le container une fois lance
 
-# while true;
-#        do sleep 10000;
-# done
 
 # ou
 # tail -f fichier de logs nginx
 # ou nginx -g 'daemon off'
 
-service mysql start
+#service mysql start
+service nginx start
 
 # creation du dossier site + fichier index
 touch /var/www/html/index.php
@@ -51,6 +49,7 @@ tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 mv ./phpMyAdmin-4.9.0.1-all-languages /var/www/html/phpmyadmin
 mv ./config.phpmyadmin.php /var/www/html/phpmyadmin/config.inc.php
 rm /var/www/html/phpmyadmin/config.sample.inc.php
+service nginx restart
 # > dans localhost/phpmyadmin > pour acceder a l'ecran de connexion PMA, se connecter avec l'user mysql wp : 'wordpress' 'password'
 # permet de visualiser bdd et commentaires
 
@@ -66,8 +65,9 @@ mv ./config-wp.php /var/www/html/wordpress/.
 #supprimer fichier par defaut de config
 rm /var/www/html/wordpress/wp-config-sample.php
 
+service mysql start
+
 service php7.3-fpm start
-service nginx start
 # creation et acces bdd depuis d'autres services / creation user et mdp pour acces bdd wp et phpmyadmin
 #echo "CREATE DATABASE testdb;" | mysql -u root
 #echo "CREATE USER 'test'@'localhost';" | mysql -u root

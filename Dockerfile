@@ -31,7 +31,7 @@ RUN apt-get -y install mariadb-server
 #installation php-mysql (realiser des applis php avec une base de donnees mysql)
 RUN apt-get -y install php-mysql
 
-RUN apt-get install vim -y
+#RUN apt-get install vim -y
 
 COPY ./srcs/init_docker.sh ./
 COPY ./srcs/config.phpmyadmin.php ./
@@ -50,8 +50,8 @@ EXPOSE 80 443
 
 ENV AUTOINDEX on
 
-RUN sh ./config.sh
-CMD bash
+#RUN sh ./config.sh
+CMD bash config.sh
 
 # RTFM
 
