@@ -6,7 +6,7 @@
 #    By: asgaulti@student.42.fr <asgaulti>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 16:59:00 by asgaulti@st       #+#    #+#              #
-#    Updated: 2021/03/31 17:48:56 by asgaulti@st      ###   ########.fr        #
+#    Updated: 2021/04/20 17:43:11 by asgaulti@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,16 @@ RUN apt-get -y install php-mysql
 
 #RUN apt-get install vim -y
 
-COPY ./srcs/init_docker.sh ./
+RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -O mkcert 
+RUN chmod 755 mkcert && ./mkcert -install && ./mkcert -cert-file /etc/ssl/certs/localhost.pem -key-file /etc/ssl/certs/localhost-key.pem localhost sendmail
+#RUN install mkcert /etc/nginx/ssl
+#RUN mkdir /var/www/localhost
+
+# donner acces aux users
+RUN chown -R www-data:www-data /var/www/
+
 COPY ./srcs/config.phpmyadmin.php ./
-COPY ./srcs/config-nginx ./
+COPY ./srcs/nginx.conf ./etc/nginx/sites-available/localhost
 COPY ./srcs/config-wp.php ./
 COPY ./srcs/config.sh ./
 COPY ./srcs/auto_index.sh ./
@@ -50,8 +57,14 @@ EXPOSE 80 443
 
 ENV AUTOINDEX on
 
+#cmd qui sexecute au run avec fichier qui tourne en continu
+ENTRYPOINT bash config.sh \
+&& tail -f /dev/null
+
+#CMD bash
+
 #RUN sh ./config.sh
-CMD bash config.sh
+#CMD bash config.sh
 
 # RTFM
 
