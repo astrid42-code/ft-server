@@ -23,8 +23,6 @@ RUN apt-get -y install php-mysql
 
 RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 -O mkcert 
 RUN chmod 755 mkcert && ./mkcert -install && ./mkcert -cert-file /etc/ssl/certs/localhost.pem -key-file /etc/ssl/certs/localhost-key.pem localhost sendmail
-#RUN install mkcert /etc/nginx/ssl
-#RUN mkdir /var/www/localhost
 
 # donner acces aux users
 RUN chown -R www-data:www-data /var/www/
@@ -35,29 +33,12 @@ COPY ./srcs/wp-config.php ./
 COPY ./srcs/config.sh ./
 COPY ./srcs/auto_index.sh ./
 COPY ./srcs/auto_index_off.conf ./
-COPY ./srcs/pingumappa.jpg ./
-
-#installation wp tar xf : extraire une archive avec un fichier donne
-#retirer le fichier .tar.gz apres install
-# RUN tar xf ./wordpress.tar.gz && rm -rf wordpress.tar.gz
-# RUN chmod 755 -R wordpress
 
 EXPOSE 80 443
 
 ENV AUTOINDEX on
 
-#cmd qui sexecute au run
 CMD sh config.sh
-#ENTRYPOINT bash config.sh \
-
-#&& tail -f /dev/null
-
-#CMD bash
-
-#RUN sh ./config.sh
-#CMD bash config.sh
-
-# RTFM
 
 # CMD sudo docker build -t (nom image) .
 # CMD sudo docker run -it --rm -p 80:80 -p 443:443 + nom de l'image
