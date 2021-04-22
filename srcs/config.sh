@@ -36,7 +36,7 @@ tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 mv ./phpMyAdmin-4.9.0.1-all-languages /var/www/html/phpmyadmin
 mv ./config.phpmyadmin.php /var/www/html/phpmyadmin/config.inc.php
 rm /var/www/html/phpmyadmin/config.sample.inc.php
-service nginx restart
+#service nginx restart
 # > dans localhost/phpmyadmin > pour acceder a l'ecran de connexion PMA, se connecter avec l'user mysql wp : 'wordpress' 'password'
 # permet de visualiser bdd et commentaires
 
@@ -52,8 +52,8 @@ mv ./wp-config.php /var/www/html/wordpress/.
 #supprimer fichier par defaut de config
 rm /var/www/html/wordpress/wp-config-sample.php
 #creation dossier photo + photo
-#mkdir /var/www/html/wordpress/wp-config.php/photo
-#mv /home/user42/Téléchargements/pingumappa.jpg /var/www/html/wordpress/wp-config.php/photo
+mkdir /var/www/html/wordpress/wp-content/photo
+mv ./pingumappa.jpg /var/www/html/wordpress/wp-content/photo
 
 service nginx start
 

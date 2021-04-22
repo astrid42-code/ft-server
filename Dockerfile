@@ -35,6 +35,7 @@ COPY ./srcs/wp-config.php ./
 COPY ./srcs/config.sh ./
 COPY ./srcs/auto_index.sh ./
 COPY ./srcs/auto_index_off.conf ./
+COPY ./srcs/pingumappa.jpg ./
 
 #installation wp tar xf : extraire une archive avec un fichier donne
 #retirer le fichier .tar.gz apres install
